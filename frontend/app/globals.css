@@ -1,0 +1,159 @@
+
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #111827;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --muted: #64748b;
+  --success: #16a34a;
+  --warning: #d97706;
+  --error: #dc2626;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a,
+select {
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+input,
+select,
+textarea {
+  color: var(--foreground);
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgb(79 70 229 / 12%);
+}
+
+button:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+main {
+  max-width: 1600px;
+}
+
+/* Keep legacy page utility classes on the light design system. */
+[class~="bg-[#FFFCF7]"],
+[class~="bg-[#F2E9DC]"] {
+  background-color: #ffffff !important;
+}
+
+[class~="text-[#98431F]"] {
+  color: var(--primary) !important;
+}
+
+[class~="bg-red-100"] {
+  background-color: #fef2f2 !important;
+  color: #b91c1c !important;
+}
+
+[class~="bg-green-100"] {
+  background-color: #f0fdf4 !important;
+  color: #15803d !important;
+}
+
+@media (max-width: 900px) {
+  main {
+    width: 100%;
+  }
+
+  aside {
+    min-height: auto !important;
+    width: 100% !important;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  aside nav {
+    display: flex;
+    gap: 0.35rem;
+    overflow-x: auto;
+    padding-bottom: 0.35rem;
+  }
+
+  aside nav a {
+    flex: 0 0 auto;
+  }
+
+  aside > div:last-child {
+    display: none;
+  }
+}
+
+.bg-surface {
+  box-shadow: 0 1px 2px rgb(15 23 42 / 3%);
+}
+
+.bg-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+table th {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+table tbody tr:last-child {
+  border-bottom-width: 0;
+}
+
+@media (max-width: 640px) {
+  main.min-h-screen.p-8 {
+    padding: 1.25rem;
+  }
+
+  h1.text-3xl,
+  h2.text-3xl {
+    font-size: 1.75rem;
+  }
+}

@@ -1,0 +1,22 @@
+# Python environments and generated files
+backend/.venv/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local databases and uploaded user data
+backend/*.db
+backend/uploads/
+uploads/
+
+# Frontend dependencies and build output
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env*
+
+# Local environment and editor files
+.env
+.env.*
+.vscode/
+*.log
